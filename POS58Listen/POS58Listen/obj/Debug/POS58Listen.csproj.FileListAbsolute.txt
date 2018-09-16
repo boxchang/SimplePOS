@@ -1,0 +1,6 @@
+D:\12.SourceCode\Develop\POS58Listen\POS58Listen\obj\Debug\ResolveAssemblyReference.cache
+D:\12.SourceCode\Develop\POS58Listen\POS58Listen\bin\Debug\POS58Listen.exe.config
+D:\12.SourceCode\Develop\POS58Listen\POS58Listen\bin\Debug\POS58Listen.exe
+D:\12.SourceCode\Develop\POS58Listen\POS58Listen\bin\Debug\POS58Listen.pdb
+D:\12.SourceCode\Develop\POS58Listen\POS58Listen\obj\Debug\POS58Listen.exe
+D:\12.SourceCode\Develop\POS58Listen\POS58Listen\obj\Debug\POS58Listen.pdb

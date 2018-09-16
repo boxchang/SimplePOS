@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="order" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertOrderResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAllOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getOrderItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getOrderItemResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getPrintOrderData">
+        <s:complexType />
+      </s:element>
+      <s:element name="getPrintOrderDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPrintOrderDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePrintFlag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePrintFlagResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertOrder" />
+  </wsdl:message>
+  <wsdl:message name="InsertOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllOrder" />
+  </wsdl:message>
+  <wsdl:message name="getAllOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="getOrderItemSoapIn">
+    <wsdl:part name="parameters" element="tns:getOrderItem" />
+  </wsdl:message>
+  <wsdl:message name="getOrderItemSoapOut">
+    <wsdl:part name="parameters" element="tns:getOrderItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPrintOrderDataSoapIn">
+    <wsdl:part name="parameters" element="tns:getPrintOrderData" />
+  </wsdl:message>
+  <wsdl:message name="getPrintOrderDataSoapOut">
+    <wsdl:part name="parameters" element="tns:getPrintOrderDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePrintFlagSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePrintFlag" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePrintFlagSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePrintFlagResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertOrderHttpGetIn">
+    <wsdl:part name="order" type="s:string" />
+    <wsdl:part name="usid" type="s:string" />
+    <wsdl:part name="desc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertOrderHttpGetOut" />
+  <wsdl:message name="getAllOrderHttpGetIn">
+    <wsdl:part name="usid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getAllOrderHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getOrderItemHttpGetIn">
+    <wsdl:part name="OrderNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getOrderItemHttpGetOut" />
+  <wsdl:message name="getPrintOrderDataHttpGetIn" />
+  <wsdl:message name="getPrintOrderDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePrintFlagHttpGetIn">
+    <wsdl:part name="OrderNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePrintFlagHttpGetOut" />
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertOrderHttpPostIn">
+    <wsdl:part name="order" type="s:string" />
+    <wsdl:part name="usid" type="s:string" />
+    <wsdl:part name="desc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertOrderHttpPostOut" />
+  <wsdl:message name="getAllOrderHttpPostIn">
+    <wsdl:part name="usid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getAllOrderHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getOrderItemHttpPostIn">
+    <wsdl:part name="OrderNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getOrderItemHttpPostOut" />
+  <wsdl:message name="getPrintOrderDataHttpPostIn" />
+  <wsdl:message name="getPrintOrderDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePrintFlagHttpPostIn">
+    <wsdl:part name="OrderNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePrintFlagHttpPostOut" />
+  <wsdl:portType name="OrderDataSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrder">
+      <wsdl:input message="tns:InsertOrderSoapIn" />
+      <wsdl:output message="tns:InsertOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllOrder">
+      <wsdl:input message="tns:getAllOrderSoapIn" />
+      <wsdl:output message="tns:getAllOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrderItem">
+      <wsdl:input message="tns:getOrderItemSoapIn" />
+      <wsdl:output message="tns:getOrderItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPrintOrderData">
+      <wsdl:input message="tns:getPrintOrderDataSoapIn" />
+      <wsdl:output message="tns:getPrintOrderDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrintFlag">
+      <wsdl:input message="tns:UpdatePrintFlagSoapIn" />
+      <wsdl:output message="tns:UpdatePrintFlagSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="OrderDataHttpGet">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrder">
+      <wsdl:input message="tns:InsertOrderHttpGetIn" />
+      <wsdl:output message="tns:InsertOrderHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllOrder">
+      <wsdl:input message="tns:getAllOrderHttpGetIn" />
+      <wsdl:output message="tns:getAllOrderHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrderItem">
+      <wsdl:input message="tns:getOrderItemHttpGetIn" />
+      <wsdl:output message="tns:getOrderItemHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPrintOrderData">
+      <wsdl:input message="tns:getPrintOrderDataHttpGetIn" />
+      <wsdl:output message="tns:getPrintOrderDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrintFlag">
+      <wsdl:input message="tns:UpdatePrintFlagHttpGetIn" />
+      <wsdl:output message="tns:UpdatePrintFlagHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="OrderDataHttpPost">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrder">
+      <wsdl:input message="tns:InsertOrderHttpPostIn" />
+      <wsdl:output message="tns:InsertOrderHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllOrder">
+      <wsdl:input message="tns:getAllOrderHttpPostIn" />
+      <wsdl:output message="tns:getAllOrderHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrderItem">
+      <wsdl:input message="tns:getOrderItemHttpPostIn" />
+      <wsdl:output message="tns:getOrderItemHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPrintOrderData">
+      <wsdl:input message="tns:getPrintOrderDataHttpPostIn" />
+      <wsdl:output message="tns:getPrintOrderDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrintFlag">
+      <wsdl:input message="tns:UpdatePrintFlagHttpPostIn" />
+      <wsdl:output message="tns:UpdatePrintFlagHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OrderDataSoap" type="tns:OrderDataSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrder">
+      <soap:operation soapAction="http://tempuri.org/InsertOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllOrder">
+      <soap:operation soapAction="http://tempuri.org/getAllOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderItem">
+      <soap:operation soapAction="http://tempuri.org/getOrderItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPrintOrderData">
+      <soap:operation soapAction="http://tempuri.org/getPrintOrderData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrintFlag">
+      <soap:operation soapAction="http://tempuri.org/UpdatePrintFlag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OrderDataSoap12" type="tns:OrderDataSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrder">
+      <soap12:operation soapAction="http://tempuri.org/InsertOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllOrder">
+      <soap12:operation soapAction="http://tempuri.org/getAllOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderItem">
+      <soap12:operation soapAction="http://tempuri.org/getOrderItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPrintOrderData">
+      <soap12:operation soapAction="http://tempuri.org/getPrintOrderData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrintFlag">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePrintFlag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OrderDataHttpGet" type="tns:OrderDataHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrder">
+      <http:operation location="/InsertOrder" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getAllOrder">
+      <http:operation location="/getAllOrder" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderItem">
+      <http:operation location="/getOrderItem" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getPrintOrderData">
+      <http:operation location="/getPrintOrderData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrintFlag">
+      <http:operation location="/UpdatePrintFlag" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OrderDataHttpPost" type="tns:OrderDataHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrder">
+      <http:operation location="/InsertOrder" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getAllOrder">
+      <http:operation location="/getAllOrder" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderItem">
+      <http:operation location="/getOrderItem" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getPrintOrderData">
+      <http:operation location="/getPrintOrderData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrintFlag">
+      <http:operation location="/UpdatePrintFlag" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OrderData">
+    <wsdl:port name="OrderDataSoap" binding="tns:OrderDataSoap">
+      <soap:address location="http://boxchang.azurewebsites.net/Mobile/Service/OrderData.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OrderDataSoap12" binding="tns:OrderDataSoap12">
+      <soap12:address location="http://boxchang.azurewebsites.net/Mobile/Service/OrderData.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OrderDataHttpGet" binding="tns:OrderDataHttpGet">
+      <http:address location="http://boxchang.azurewebsites.net/Mobile/Service/OrderData.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OrderDataHttpPost" binding="tns:OrderDataHttpPost">
+      <http:address location="http://boxchang.azurewebsites.net/Mobile/Service/OrderData.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

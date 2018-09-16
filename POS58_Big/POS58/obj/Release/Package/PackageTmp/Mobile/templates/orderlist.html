@@ -1,0 +1,20 @@
+<ion-view title="訂單" id="Orderlist" style="">
+  <ion-content padding="true" class="has-header">
+    <div class="item item-body" id="page3-list-item-container2" style="" ng-repeat="(key, order) in orders | orderBy:'-orderno'">
+      <div id="page3-markdown4" class="show-list-numbers-and-dots">
+        <h2>訂單編號： <span ng-bind="order.orderno"></span></h2>
+        <h2>總金額： <span ng-bind="order.total"></span></h2>
+        <h2>物品清單：</h2>
+          <div ng-repeat="(key, detail) in order.orderdetail">
+             <span ng-bind="detail.item"></span> (<span ng-bind="detail.dprice"></span>)  x <span ng-bind="detail.itemqty"></span> = <span ng-bind="detail.total"></span>
+          </div>
+        <h2>備註：<span ng-bind="order.odesc"></span></h2>
+        
+      </div>
+         
+      <!--<div ng-controller="OrderController">
+          {{order}}
+      </div>-->
+    </div>
+  </ion-content>
+</ion-view>

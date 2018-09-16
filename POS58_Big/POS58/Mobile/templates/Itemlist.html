@@ -1,0 +1,23 @@
+<ion-view title="物品清單" id="page7" style="">
+  <ion-content padding="true" class="has-header">
+      <div ng-repeat="item in items track by $index">
+        <div class="col">
+                <div class="row">
+                    <div class="col"><img ng-src="img/{{item.photo}}" width="60% auto"></div>
+                    <div class="col">
+                        <p style="text-overflow : clip;width:100%;font-size:1.1em;">{{item.item}}</p>     
+                        <p>原價 <del>{{item.price}}</del><br />友情價 {{item.dprice}}</p>
+                        <p>{{item.total}}</p>
+                    </div>
+                </div>
+                  
+        </div>
+          <button class="button" ng-click="increase(item)">+</button>　{{item.num}}　<button class="button" ng-click="decrease(item)">-</button>
+          <button ng-click="putItem(item)" style="font-size:1.2em;">放入購物車</button>
+          <br />
+      </div>
+    <br />
+    <br />  
+    
+  </ion-content>
+</ion-view>
