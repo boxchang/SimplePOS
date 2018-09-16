@@ -1,8 +1,9 @@
 "# SimplePOS"
 ##POS58_Big
-╦Й╝ф╖╗POS58_Big
-╘Я╦m╘СAzure╙е╤║║A╗ц╗о╔нAngularJS+IONIC╟╣╕╗╓Б╬В╙╘╔╩
+ХЁ┤Ф√≥Е╓╬POS58_Big
+Ф■╬Г╫╝Ф√╪AzureГ╘╨И√⌠О╪▄Д╦╕Д╫©Г■╗AngularJS+IONICЕ│ Ф┬░Ф┴▀Ф╘÷Г┴┬Ф°╛
 
 ##Printer Listen Program
-╦Й╝ф╖╗POS58Listen
-╘Я╦m╘СMini PC║A╔D╜n╛O╦ъ╟щAzure╦Й╝ф╝w╛O╖_╕Ё╜qЁФ║A╕Ё╢N╕C╕L╗Л╪Ж╠с╕║╪пер╬В
+ХЁ┤Ф√≥Е╓╬POS58Listen
+Ф■╬Г╫╝Ф√╪Mini PCО╪▄Д╦╩Х╕│Ф≤╞Х╘╒Е∙▐AzureХЁ┤Ф√≥Е╨╚Ф≤╞Е░╕Ф°┴Х╗┌Е√╝О╪▄Ф°┴Е╟╠Е┬≈Е█╟Е┬╟Г├╠Ф∙▐Е╪▐Ф╗≥Г╠╓Ф╘÷
+##
